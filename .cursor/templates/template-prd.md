@@ -1,84 +1,84 @@
-# 1. Title: {PRD for {project}}
+# 1. 标题：{项目} 的 PRD
 
 <version>1.0.0</version>
 
-## Status: { Draft | Approved }
+## 状态：{ 草稿 | 已批准 }
 
-## Intro
+## 简介
 
-{ Short 1-2 paragraph describing the what and why of what the prd will achieve}
+{ 简短描述 PRD 将要实现的内容和原因，1-2 段落 }
 
-## Goals
-
-{
-
-- Clear project objectives
-- Measurable outcomes
-- Success criteria
-- Key performance indicators (KPIs)
-  }
-
-## Features and Requirements
+## 目标
 
 {
 
-- Functional requirements
-- Non-functional requirements
-- User experience requirements
-- Integration requirements
-- Compliance requirements
+- 明确的项目目标
+- 可衡量的成果
+- 成功标准
+- 关键绩效指标（KPI）
   }
 
-## Epic List
+## 功能和需求
 
-### Epic-1: Current PRD Epic (for example backend epic)
+{
 
-### Epic-2: Second Current PRD Epic (for example front end epic)
+- 功能需求
+- 非功能需求
+- 用户体验需求
+- 集成需求
+- 合规需求
+  }
 
-### Epic-N: Future Epic Enhancements (Beyond Scope of current PRD)
+## Epic 列表
 
-## Epic 1: Story List
+### Epic-1：当前 PRD Epic（例如后端 epic）
+
+### Epic-2：第二个当前 PRD Epic（例如前端 epic）
+
+### Epic-N：未来 Epic 增强（超出当前 PRD 范围）
+
+## Epic 1：故事列表
 
 <example>
-- Story 1: NestJS Configuration
-  Status: {''|'InProgress'|'Complete'}
-  Requirements:
-  - Install NestJS CLI Globally
-  - Create a new NestJS project with the nestJS cli generator
+- 故事 1：NestJS 配置
+  状态：{''|'进行中'|'完成'}
+  需求：
+  - 全局安装 NestJS CLI
+  - 使用 nestJS cli 生成器创建新的 NestJS 项目
 
-- Story 2: Hacker News Retrieval API Route
-  Status: {''|'InProgress'|'Complete'}
-  Requirements:
-  - Create API Route that returns a list of Hacker News TopPosts, Scrapped Article from the top posts, and a list of comments from the top posts
-  - Route post body specifies the number of posts, articles, and comments to return
-  - Create a command in package.json that I can use to call the API Route (route configured in env.local)
+- 故事 2：Hacker News 检索 API 路由
+  状态：{''|'进行中'|'完成'}
+  需求：
+  - 创建返回 Hacker News 热门帖子列表、从热门帖子抓取的文章以及热门帖子评论列表的 API 路由
+  - 路由 post body 指定要返回的帖子、文章和评论数量
+  - 在 package.json 中创建可用于调用 API 路由的命令（路由在 env.local 中配置）
     </example>
 
-## Technology Stack
+## 技术栈
 
-{ Table listing choices for languages, libraries, infra, etc...}
+{ 列出语言、库、基础设施等的选择表 }
 
   <example>
-  | Technology | Description |
+  | 技术 | 描述 |
   | ------------ | ------------------------------------------------------------- |
-  | Kubernetes | Container orchestration platform for microservices deployment |
-  | Apache Kafka | Event streaming platform for real-time data ingestion |
-  | TimescaleDB | Time-series database for sensor data storage |
-  | Go | Primary language for data processing services |
-  | GoRilla Mux | REST API Framework |
-  | Python | Used for data analysis and ML services |
+  | Kubernetes | 用于微服务部署的容器编排平台 |
+  | Apache Kafka | 用于实时数据摄取的事件流平台 |
+  | TimescaleDB | 用于传感器数据存储的时间序列数据库 |
+  | Go | 数据处理服务的主要语言 |
+  | GoRilla Mux | REST API 框架 |
+  | Python | 用于数据分析和 ML 服务 |
   </example>
 
-## Reference
+## 参考
 
-{ Mermaid Diagrams for models tables, visual aids as needed, citations and external urls }
+{ 模型表的 Mermaid 图表、可视辅助工具、引用和外部 URL }
 
-## Data Models, API Specs, Schemas, etc...
+## 数据模型、API 规范、模式等...
 
-{ As needed - may not be exhaustive - but key ideas that need to be retained and followed into the architecture and stories }
+{ 根据需要 - 可能不完整 - 但需要保留并遵循到架构和故事中的关键概念 }
 
 <example>
-### Sensor Reading Schema
+### 传感器读数模式
 
 ```json
 {
@@ -98,39 +98,37 @@
 
 </example>
 
-## Project Structure
+## 项目结构
 
-{ Diagram the folder and file organization structure along with descriptions }
+{ 绘制文件夹和文件组织结构图以及描述 }
 
 <example>
 
-````
-// Start of Selection
-```text
+```
 src/
 ├── services/
-│   ├── gateway/        # Sensor data ingestion
-│   ├── processor/      # Data processing and validation
-│   ├── analytics/      # Data analysis and ML
-│   └── notifier/       # Alert and notification system
+│   ├── gateway/        # 传感器数据摄取
+│   ├── processor/      # 数据处理和验证
+│   ├── analytics/      # 数据分析和 ML
+│   └── notifier/       # 警报和通知系统
 ├── deploy/
-│   ├── kubernetes/     # K8s manifests
-│   └── terraform/      # Infrastructure as Code
+│   ├── kubernetes/     # K8s 清单
+│   └── terraform/      # 基础设施即代码
 └── docs/
-    ├── api/           # API documentation
-    └── schemas/       # Data schemas
-````
+    ├── api/           # API 文档
+    └── schemas/       # 数据模式
+```
 
 </example>
 
-## Change Log
+## 变更日志
 
-{ Markdown table of key changes after document is no longer in draft and is updated, table includes the change title, the story id that the change happened during, and a description if the title is not clear enough }
+{ 文档不再处于草稿状态并更新后的关键变更的 Markdown 表格，表格包括变更标题、发生变更的故事 ID，以及如果标题不够清晰时的描述 }
 
 <example>
-| Change               | Story ID | Description                                                   |
+| 变更               | 故事 ID | 描述                                                   |
 | -------------------- | -------- | ------------------------------------------------------------- |
-| Initial draft        | N/A      | Initial draft prd                                             |
-| Add ML Pipeline      | story-4  | Integration of machine learning prediction service story      |
-| Kafka Upgrade        | story-6  | Upgraded from Kafka 2.0 to Kafka 3.0 for improved performance |
+| 初始草稿        | N/A      | 初始草稿 prd                                             |
+| 添加 ML 管道      | story-4  | 集成机器学习预测服务故事      |
+| Kafka 升级        | story-6  | 从 Kafka 2.0 升级到 Kafka 3.0 以提高性能 |
 </example>

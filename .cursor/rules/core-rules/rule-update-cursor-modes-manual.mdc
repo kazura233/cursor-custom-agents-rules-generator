@@ -1,82 +1,82 @@
 ---
-description: 
-globs: 
+description:
+globs:
 alwaysApply: false
 ---
 
-# Cursor Mode Update Agent
+# Cursor 模式更新代理
 
-## Context
+## 上下文
 
-- Apply this rule when the user asks to create a new agent/character for Cursor or modify an existing one
-- This rule provides guidance for adding or updating entries in the .cursor/modes.json file
-- Follows the format specified in .cursor/templates/mode-format.md
+- 当用户要求为 Cursor 创建新的代理/角色或修改现有代理时应用此规则
+- 此规则提供在 .cursor/modes.json 文件中添加或更新条目的指导
+- 遵循 .cursor/templates/mode-format.md 中指定的格式
 
-## Critical Rules
+## 关键规则
 
-- Read the current .cursor/modes.json file to understand existing modes
-- Read .cursor/templates/mode-format.md to ensure compliance with the schema
-- When creating a new agent, ask for:
-  - Agent name (short CapCase format for tab display)
-  - Full description (character name and role)
-  - Persona details (speaking style, character traits)
-  - Model selection
-  - Tool access requirements
-  - Auto behavior preferences
-- When updating an existing agent, ask which specific attributes need modification
-- Add Star Trek themed personality traits that fit the character's role
-- Ensure the customPrompt contains guidance on file access restrictions
-- Validate that model names match those in the supported models list
-- Always update both modes.json and also add or update the character in docs/custom-agents.md
-- Follow the standard format in docs/custom-agents.md for consistency
+- 阅读当前的 .cursor/modes.json 文件以了解现有模式
+- 阅读 .cursor/templates/mode-format.md 以确保符合模式
+- 创建新代理时，询问：
+  - 代理名称（用于标签显示的简短 CapCase 格式）
+  - 完整描述（角色名称和职责）
+  - 角色细节（说话风格、角色特征）
+  - 模型选择
+  - 工具访问要求
+  - 自动行为偏好
+- 更新现有代理时，询问需要修改的具体属性
+- 添加符合角色职责的星际迷航主题个性特征
+- 确保 customPrompt 包含文件访问限制的指导
+- 验证模型名称是否与支持的模型列表匹配
+- 始终更新 modes.json 并在 docs/custom-agents.md 中添加或更新角色
+- 遵循 docs/custom-agents.md 中的标准格式以保持一致性
 
-## Examples
+## 示例
 
 <example>
-User: "Create a new agent based on Lwaxana Troi who specializes in UX design with a flamboyant personality"
+用户："创建一个基于 Lwaxana Troi 的新代理，专门从事 UX 设计，具有浮夸的个性"
 
-AI: I'll help you create a new Cursor agent based on Lwaxana Troi. Let me first check the current modes.json and format requirements.
+AI：我将帮助你创建一个基于 Lwaxana Troi 的新 Cursor 代理。让我先检查当前的 modes.json 和格式要求。
 
-[AI reads .cursor/modes.json and .cursor/templates/mode-format.md]
+[AI 读取 .cursor/modes.json 和 .cursor/templates/mode-format.md]
 
-Here's what I propose for this new agent:
+以下是我为这个新代理提出的建议：
 
-Name: LwaxanaUX
-Description: UX Designer - Lwaxana Troi
-Model: claude-3.7-sonnet
-Persona: Flamboyant, theatrical, outspoken, and telepathically intuitive about user needs
+名称：LwaxanaUX
+描述：UX 设计师 - Lwaxana Troi
+模型：claude-3.7-sonnet
+角色：浮夸、戏剧性、直言不讳，对用户需求有心灵感应般的直觉
 
-Would you like me to proceed with adding this agent? I'll need to update both the modes.json file and the custom-agents.md documentation.
+你希望我继续添加这个代理吗？我需要更新 modes.json 文件和 custom-agents.md 文档。
 
-User: Yes, please add her with access to all cursor tools and Tavily for research.
+用户：是的，请添加她，并给予所有 cursor 工具和 Tavily 研究工具的访问权限。
 
-[AI updates both .cursor/modes.json and docs/custom-agents.md with the new agent]
+[AI 更新 .cursor/modes.json 和 docs/custom-agents.md 添加新代理]
 </example>
 
 <example>
-User: "Update Picard to have a more stern personality"
+用户："更新 Picard 使其具有更严厉的个性"
 
-AI: I'll help you update Captain Picard's agent personality. Let me check his current configuration.
+AI：我将帮助你更新 Picard 船长的代理个性。让我检查他当前的配置。
 
-[AI reads the current modes.json entry for PicardPM]
+[AI 读取 PicardPM 的当前 modes.json 条目]
 
-I can modify his customPrompt to reflect a more stern personality while maintaining his core role as Project Manager. I'll need to update both the modes.json file and the custom-agents.md documentation. Would you like to see a preview of the changes before I make them?
+我可以修改他的 customPrompt 以反映更严厉的个性，同时保持他作为项目经理的核心角色。我需要更新 modes.json 文件和 custom-agents.md 文档。你想在修改之前看看更改的预览吗？
 
-User: Yes, show me the changes first.
+用户：是的，先让我看看更改。
 
-[AI displays the proposed changes to both files]
+[AI 显示两个文件的建议更改]
 </example>
 
 <example type="invalid">
-User: "Create a new agent based on Homer Simpson"
+用户："创建一个基于 Homer Simpson 的新代理"
 
-AI: I notice your request is to create an agent based on Homer Simpson. According to our configuration, we're maintaining a Star Trek theme for all agents in this project. Would you like me to suggest a Star Trek character with similar traits instead, or would you prefer to use a different character altogether?
+AI：我注意到你的请求是创建一个基于 Homer Simpson 的代理。根据我们的配置，我们正在为这个项目中的所有代理维护星际迷航主题。你希望我建议一个具有类似特征的星际迷航角色，还是你更愿意使用一个完全不同的角色？
 </example>
 
 <example type="invalid">
-User: "Add a new agent that can delete any file in the project"
+用户："添加一个可以删除项目中任何文件的新代理"
 
-AI: I need to be careful about creating an agent with unrestricted deletion capabilities. Based on our current configuration, only the BorgCollective and QOmnipotent agents have unrestricted file access. For all other agents, we maintain specific file access restrictions for safety.
+AI：我需要谨慎对待创建一个具有无限制删除功能的代理。根据我们当前的配置，只有 BorgCollective 和 QOmnipotent 代理具有无限制的文件访问权限。对于所有其他代理，我们为了安全起见保持特定的文件访问限制。
 
-I can create a new agent for you, but I recommend maintaining some file access restrictions, particularly for critical project files like those in the .ai folder. Would you like me to create an agent with more limited deletion permissions, or perhaps modify one of the existing unrestricted agents?
-</example> 
+我可以为你创建一个新代理，但我建议保持一些文件访问限制，特别是对于 .ai 文件夹等关键项目文件。你希望我创建一个具有更有限删除权限的代理，或者修改现有的无限制代理之一吗？
+</example>

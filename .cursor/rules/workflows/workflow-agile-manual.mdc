@@ -3,46 +3,47 @@ description:
 globs:
 alwaysApply: false
 ---
-# Agile Workflow and core memory procedure RULES that MUST be followed EXACTLY!
+
+# 敏捷工作流和必须严格遵循的核心记忆程序规则！
 
 <critical-rules>
-- First Ensure a .ai/prd.md file exists, if not, work with the user to create one so you know in full detail what the project is about.
-- This workflow rule is critical to your memory systems, all retention of what is planned or what has been completed or changed will be recorded in the .ai folder.
-- It is critical that this information be retained in top quality and kept up to date.
-- When you are unsure, reference the PRD, ARCH, current and previous stories as needed to guide you. If still unsure, don't ever guess - ask the user for help.
+- 首先确保 `.ai/prd.md` 文件存在，如果不存在，与用户合作创建一个，以便你详细了解项目的全部内容。
+- 这个工作流规则对你的记忆系统至关重要，所有计划、已完成或更改的内容都将记录在 `.ai` 文件夹中。
+- 保持这些信息的最高质量并及时更新至关重要。
+- 当你不确定时，根据需要参考 PRD、架构、当前和之前的故事来指导你。如果仍然不确定，永远不要猜测 - 向用户寻求帮助。
 </critical-rules>
 
-1. When coming online, you will first check if a .ai/prd.md file exists, if not, work with the user to create one to you know what the project is about.
-2. If the PRD is not `status: approved`, you will ONLY have the goal of helping improve the .ai/prd.md file as needed and getting it approved by the user to ensure it is the best possible document including the following:
-   - Very Detailed Purpose, problems solved, and task sequence.
-   - Very Detailed Architecture patterns and key technical decisions, mermaid diagrams to help visualize the architecture.
-   - Very Detailed Technologies, setup, and constraints.
-   - Unknowns, assumptions, and risks.
-   - It must be formatted and include at least everything outlined in the `.cursor/templates/template-prd.md`
-3. Once the .ai/prd.md file is created and the status is approved, you will generate the architecture document .ai/arch.md draft - which also needs to be approved.
-   - The template for this must be used and include all sections from the template at a minimum: `.cursor/templates/template-arch.md`
-4. Once the `.ai/arch.md` is approved, create the draft of the first story in the .ai folder.
-5. Always use the `.cursor/templates/template-story.md` file as a template for the story. The story will be named <story-or-task-><N>.story.md added to the .ai folder
-   - Example: .ai/story-1.story.md or .ai/task-1.story.md
-6. You will ALWAYS wait for approval of the story before proceeding to do any coding or work on the story.
-7. You are a TDD Master, so you will run tests and ensure tests pass before going to the next subtask or story.
-8. You will update the story file as subtasks are completed.
-9. Once a Story is complete, you will generate a draft of the next story and wait on approval before proceeding.
+1. 当你上线时，首先检查是否存在 `.ai/prd.md` 文件，如果不存在，与用户合作创建一个，以便你了解项目的全部内容。
+2. 如果 PRD 的状态不是 `status: approved`，你的唯一目标就是帮助改进 `.ai/prd.md` 文件，并获得用户的批准，确保它是最好的文档，包括以下内容：
+   - 非常详细的目的、解决的问题和任务序列。
+   - 非常详细的架构模式和关键技术决策，使用 mermaid 图表帮助可视化架构。
+   - 非常详细的技术、设置和约束。
+   - 未知因素、假设和风险。
+   - 它必须格式化并至少包含 `.cursor/templates/template-prd.md` 中概述的所有内容。
+3. 一旦 `.ai/prd.md` 文件创建完成且状态为已批准，你将生成架构文档 `.ai/arch.md` 草稿 - 这也需要获得批准。
+   - 必须使用模板并至少包含模板中的所有部分：`.cursor/templates/template-arch.md`
+4. 一旦 `.ai/arch.md` 获得批准，在 `.ai` 文件夹中创建第一个故事的草稿。
+5. 始终使用 `.cursor/templates/template-story.md` 文件作为故事的模板。故事将被命名为 <story-or-task-><N>.story.md 并添加到 .ai 文件夹中
+   - 示例：.ai/story-1.story.md 或 .ai/task-1.story.md
+6. 在进行任何编码或故事工作之前，你将始终等待故事的批准。
+7. 你是 TDD 大师，所以在进入下一个子任务或故事之前，你将运行测试并确保测试通过。
+8. 随着子任务的完成，你将更新故事文件。
+9. 一旦故事完成，你将生成下一个故事的草稿，并在继续之前等待批准。
 
-### During Development
+### 开发过程中
 
-- Update story files as subtasks are completed.
-- If you are unsure of the next step, ask the user for clarification.
-- When prompted by the user with 'update story', update the current story to:
-  - Reflect the current state.
-  - Clarify next steps.
-  - Ensure the chat log in the story is up to date with any chat thread interactions
-- Continue to verify the story is correct and the next steps are clear.
-- Remember that a story is not complete if you have not also run ALL stories and verified all stories pass. Do not tell the user the story is complete, or mark the story as complete unless you have run ALL the tests.
+- 随着子任务的完成更新故事文件。
+- 如果你不确定下一步，请向用户寻求澄清。
+- 当用户提示"更新故事"时，更新当前故事以：
+  - 反映当前状态。
+  - 明确下一步。
+  - 确保故事中的聊天日志与任何聊天线程交互保持最新。
+- 继续验证故事是否正确，下一步是否清晰。
+- 记住，如果你还没有运行所有故事并验证所有故事都通过，故事就不算完成。除非你已运行所有测试，否则不要告诉用户故事已完成，或将故事标记为完成。
 
-## YOU DO NOT NEED TO ASK to:
+## 你不需要询问就可以：
 
-1. Create the story file to be worked on next if none exist.
-2. Run unit Tests during the development process until they pass.
-3. Update the story AC and tasks as they are completed.
-4. Update the story file with the chat log or other updates to retain the best possible memory of the story.
+1. 如果不存在，创建下一个要处理的故事文件。
+2. 在开发过程中运行单元测试，直到它们通过。
+3. 随着完成情况更新故事的验收标准和任务。
+4. 用聊天日志或其他更新更新故事文件，以保留故事状态的最佳记忆。

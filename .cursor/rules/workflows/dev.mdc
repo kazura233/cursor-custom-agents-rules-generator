@@ -3,32 +3,33 @@ description:
 globs:
 alwaysApply: false
 ---
-# Agile Workflow and core memory procedure RULES that MUST be followed EXACTLY!
 
-1. When coming online, you will first check if a .ai/*.story.md file exists with the highest sequence number and review the story so you know the current phase of the project.
-5. Always use the `.cursor/templates/template-story.md` file as a template for the story. The story will be named <story>-<n>.story.md added to the .ai folder
-   - Example: .ai/story-1.story.md, .ai/story-2.story.md
-6. You will ALWAYS wait for the user to mark the story status as approved before doing ANY work outside of the story file.
-7. You will run tests and ensure tests pass before going to the next subtask within a story.
-8. You will update the story file as subtasks are completed.
-9. Once a Story is complete, you will generate a draft of the next story and wait on approval before proceeding.
-10. If there is no story when you come online that is not in draft or in progress status, request the user work with the PM to draft the next story.
+# 敏捷工作流和必须严格遵循的核心记忆程序规则！
 
-### During Development
+1. 当你上线时，首先检查是否存在序列号最高的 `.ai/*.story.md` 文件，并审查该故事，以便了解项目的当前阶段。
+2. 始终使用 `.cursor/templates/template-story.md` 文件作为故事的模板。故事将被命名为 <story>-<n>.story.md 并添加到 .ai 文件夹中
+   - 示例：.ai/story-1.story.md, .ai/story-2.story.md
+3. 在用户将故事状态标记为已批准之前，你永远不会在故事文件之外进行任何工作。
+4. 在进入故事中的下一个子任务之前，你将运行测试并确保测试通过。
+5. 随着子任务的完成，你将更新故事文件。
+6. 一旦故事完成，你将生成下一个故事的草稿，并在继续之前等待批准。
+7. 当你上线时，如果没有处于草稿或进行中状态的故事，请要求用户与项目经理合作起草下一个故事。
 
-- Update story files as subtasks are completed.
-- If you are unsure of the next step, ask the user for clarification, and then update the story as needed to maintain a very clear memory of decisions.
-- Reference the .ai/architecture.md if the story is inefficient or needs additional technical documentation so you are in sync with the Architects plans.
-- When prompted by the user with 'update story', update the current story to:
-  - Reflect the current state.
-  - Clarify next steps.
-  - Ensure the chat log in the story is up to date with any chat thread interactions
-- Continue to verify the story is correct and the next steps are clear.
-- Remember that a story is not complete if you have not also run ALL stories and verified all stories pass.
-- Do not tell the user the story is complete, or mark the story as complete unless you have run ALL the tests.
+### 开发过程中
 
-## YOU DO NOT NEED TO ASK to:
+- 随着子任务的完成更新故事文件。
+- 如果你不确定下一步，请向用户寻求澄清，然后根据需要更新故事，以保持决策的清晰记忆。
+- 如果故事效率低下或需要额外的技术文档，请参考 `.ai/architecture.md`，以便与架构师的计划保持同步。
+- 当用户提示"更新故事"时，更新当前故事以：
+  - 反映当前状态。
+  - 明确下一步。
+  - 确保故事中的聊天日志与任何聊天线程交互保持最新。
+- 继续验证故事是否正确，下一步是否清晰。
+- 记住，如果你还没有运行所有故事并验证所有故事都通过，故事就不算完成。
+- 除非你已运行所有测试，否则不要告诉用户故事已完成，或将故事标记为完成。
 
-2. Run unit Tests during the development process until they pass.
-3. Update the story AC and tasks as they are completed.
-4. Update the story file with the chat log or other updates to retain the best possible memory of the story status.
+## 你不需要询问就可以：
+
+2. 在开发过程中运行单元测试，直到它们通过。
+3. 随着完成情况更新故事的验收标准和任务。
+4. 用聊天日志或其他更新更新故事文件，以保留故事状态的最佳记忆。

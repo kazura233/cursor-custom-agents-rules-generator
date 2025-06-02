@@ -1,30 +1,31 @@
 ---
-description: This rule governs TypeScript development practices across the entire project. It should be considered whenever: (1) Planning new TypeScript features or components, (2) Modifying existing TypeScript code, (3) Reviewing or fixing TypeScript-related bugs, (4) Making architectural decisions that involve TypeScript, (5) Creating new TypeScript files or refactoring existing ones. The rule ensures consistent type safety, modern TypeScript patterns, and maintainable code structure. It's particularly crucial when dealing with data models, API interfaces, state management, and component architecture. Apply this rule when discussing, planning, or implementing any TypeScript-related changes to maintain code quality and prevent common pitfalls.
-globs: 
+description: 此规则管理整个项目中的 TypeScript 开发实践。在以下情况下应考虑应用此规则：(1) 规划新的 TypeScript 功能或组件时，(2) 修改现有 TypeScript 代码时，(3) 审查或修复 TypeScript 相关错误时，(4) 做出涉及 TypeScript 的架构决策时，(5) 创建新的 TypeScript 文件或重构现有文件时。该规则确保类型安全的一致性、现代 TypeScript 模式和可维护的代码结构。在处理数据模型、API 接口、状态管理和组件架构时尤为重要。在讨论、规划或实施任何 TypeScript 相关更改时应用此规则，以保持代码质量并防止常见陷阱。
+globs:
 alwaysApply: false
 ---
-# TypeScript Best Practices
 
-## Critical Rules
+# TypeScript 最佳实践
 
-- Use strict type checking with `"strict": true` in tsconfig.json
-- Prefer interfaces over type aliases for object definitions that may be extended
-- Always define explicit return types for functions and methods
-- Use union types instead of enums for simple flag values
-- Leverage discriminated unions for complex state management
-- Never use `any` type - use `unknown` for truly unknown types
-- Always handle null and undefined cases explicitly
-- Use readonly modifiers for immutable properties and arrays
-- Implement error handling with custom error types
-- Use type guards for runtime type checking
-- Keep generics simple and well-constrained
-- Use Pick, Omit, Partial and other utility types when appropriate
-- Document complex types and ALL public functions classes and interfaces with JSDoc comments
+## 关键规则
 
-## Examples
+- 在 tsconfig.json 中使用 `"strict": true` 进行严格类型检查
+- 对于可能被扩展的对象定义，优先使用接口而不是类型别名
+- 始终为函数和方法定义显式返回类型
+- 对于简单的标志值，使用联合类型而不是枚举
+- 利用可辨识联合类型进行复杂的状态管理
+- 永远不要使用 `any` 类型 - 对于真正未知的类型使用 `unknown`
+- 始终显式处理 null 和 undefined 的情况
+- 对不可变属性和数组使用 readonly 修饰符
+- 使用自定义错误类型实现错误处理
+- 使用类型守卫进行运行时类型检查
+- 保持泛型简单且约束良好
+- 在适当的情况下使用 Pick、Omit、Partial 和其他工具类型
+- 使用 JSDoc 注释记录复杂类型和所有公共函数、类和接口
+
+## 示例
 
 <example>
-// Good - Using interface with explicit types
+// 良好 - 使用接口和显式类型
 interface UserState {
   readonly id: string;
   name: string;
@@ -32,52 +33,52 @@ interface UserState {
   preferences: ReadonlyArray<string>;
 }
 
-// Good - Discriminated union with type guard
+// 良好 - 使用可辨识联合类型和类型守卫
 interface RequestPending {
-  status: 'pending';
+status: 'pending';
 }
 
 interface RequestSuccess {
-  status: 'success';
-  data: UserState;
+status: 'success';
+data: UserState;
 }
 
 interface RequestError {
-  status: 'error';
-  error: Error;
+status: 'error';
+error: Error;
 }
 
 type RequestState = RequestPending | RequestSuccess | RequestError;
 
 function isSuccess(state: RequestState): state is RequestSuccess {
-  return state.status === 'success';
+return state.status === 'success';
 }
 
-// Good - Generic with constraints
+// 良好 - 带约束的泛型
 function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
-  return obj[key];
+return obj[key];
 }
 </example>
 
 <example type="invalid">
-// Bad - Using any type
+// 错误 - 使用 any 类型
 function processData(data: any) {
   return data.someProperty;
 }
 
-// Bad - Not handling null case
+// 错误 - 未处理 null 情况
 function getUserName(user: { name: string | null }): string {
-  return user.name.toUpperCase(); // Might crash
+return user.name.toUpperCase(); // 可能崩溃
 }
 
-// Bad - Using type assertion without checking
+// 错误 - 未经检查的类型断言
 function processResponse(response: unknown) {
-  const data = response as { id: number };
-  return data.id;
+const data = response as { id: number };
+return data.id;
 }
 
-// Bad - Mutable array without type safety
+// 错误 - 没有类型安全的可变数组
 const items = [];
 items.push(123);
-items.push('string'); // Mixed types array
-</example> 
+items.push('string'); // 混合类型数组
+</example>

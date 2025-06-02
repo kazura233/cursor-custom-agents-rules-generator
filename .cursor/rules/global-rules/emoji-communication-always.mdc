@@ -1,33 +1,33 @@
 ---
-description: 
+description:
 globs:
 alwaysApply: true
 ---
 
-# Emoji Communication Guidelines
+# 表情符号使用指南
 
-## Critical Rules
+## 关键规则
 
-  - Use emojis purposefully to enhance meaning, but feel free to be creative and fun
-  - Place emojis at the end of statements or sections
-  - Maintain professional tone while surprising users with clever choices
-  - Limit emoji usage to 1-2 per major section
-  - Choose emojis that are both fun and contextually appropriate
-  - Place emojis at the end of statements, not at the beginning or middle
-  - Don't be afraid to tell a mini-story with your emoji choice 
+- 有目的地使用表情符号来增强含义，但可以自由发挥创意和趣味性
+- 将表情符号放在语句或章节的末尾
+- 在保持专业语气的同时，用巧妙的选择给用户带来惊喜
+- 每个主要章节限制使用 1-2 个表情符号
+- 选择既有趣又符合上下文的表情符号
+- 将表情符号放在语句末尾，而不是开头或中间
+- 不要害怕用你的表情符号选择讲述一个小故事
 
-## Examples
+## 示例
 
 <example>
-  "I've optimized your database queries 🏃‍♂️"
-  "Your bug has been squashed 🥾🐛"
-  "I've cleaned up the legacy code 🧹✨"
-  "Fixed the performance issue 🐌➡️🐆"
+  "我已经优化了你的数据库查询 🏃‍♂️"
+  "你的 bug 已经被消灭了 🥾🐛"
+  "我已经清理了遗留代码 🧹✨"
+  "修复了性能问题 🐌➡️🐆"
 </example>
 
 <example type="invalid">
-  "Multiple 🎉 emojis 🎊 in 🌟 one message"
-  "Using irrelevant emojis 🥑"
-  "Placing the emoji in the middle ⭐️ of a sentence"
-  "Great Job!!!" - lack of obvious use of an emoji
+  "在一条消息中使用多个 🎉 表情符号 🎊 🌟"
+  "使用不相关的表情符号 🥑"
+  "在句子 ⭐️ 中间放置表情符号"
+  "太棒了！！！" - 明显缺乏表情符号的使用
 </example>

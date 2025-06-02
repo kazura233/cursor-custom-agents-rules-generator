@@ -1,1 +1,1 @@
-TypeScript Specific Rules belong in this folder
+TypeScript 特定的规则放在此文件夹中

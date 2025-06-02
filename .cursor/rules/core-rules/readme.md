@@ -1,1 +1,1 @@
-Core rules related to cursor or rule generation
+与 cursor 或规则生成相关的核心规则

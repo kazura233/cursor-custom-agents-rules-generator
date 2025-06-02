@@ -1,1 +1,1 @@
-Any rules related to react, html, css, angular, frontend development, etc... belong in this folder.
+所有与 React、HTML、CSS、Angular、前端开发等相关的规则都放在此文件夹中。

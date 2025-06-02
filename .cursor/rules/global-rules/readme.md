@@ -1,5 +1,5 @@
-All globally applying always on rules that will bloat every chat and cmd-k context go here.
+所有全局应用且始终启用的规则都会放在这里，这些规则会增加每个聊天和 cmd-k 上下文的负担。
 
-Rules in this folder will have alwaysApply: true with blank descriptions and globs.
+此文件夹中的规则将具有 alwaysApply: true，且描述和 globs 为空。
 
-These are equivalent to the root project .cursorrules files (which are now deprecated and may be removed in a future cursor version)
+这些规则等同于根项目的 .cursorrules 文件（这些文件现在已被弃用，可能在未来的 cursor 版本中被移除）

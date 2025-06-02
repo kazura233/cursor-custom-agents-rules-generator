@@ -1,36 +1,36 @@
-# Architecture for {PRD Title}
+# {PRD 标题} 的架构
 
-Status: { Draft | Approved }
+状态：{ 草稿 | 已批准 }
 
-## Technical Summary
+## 技术摘要
 
-{ Short 1-2 paragraph }
+{ 简短的 1-2 段落 }
 
-## Technology Table
+## 技术选型表
 
-Table listing choices for languages, libraries, infra, etc...
+列出语言、库、基础设施等的选择...
 
   <example>
-  | Technology | Description |
+  | 技术 | 描述 |
   | ------------ | ------------------------------------------------------------- |
-  | Kubernetes | Container orchestration platform for microservices deployment |
-  | Apache Kafka | Event streaming platform for real-time data ingestion |
-  | TimescaleDB | Time-series database for sensor data storage |
-  | Go | Primary language for data processing services |
-  | GoRilla Mux | REST API Framework |
-  | Python | Used for data analysis and ML services |
+  | Kubernetes | 用于微服务部署的容器编排平台 |
+  | Apache Kafka | 用于实时数据摄取的事件流平台 |
+  | TimescaleDB | 用于传感器数据存储的时间序列数据库 |
+  | Go | 数据处理服务的主要语言 |
+  | GoRilla Mux | REST API 框架 |
+  | Python | 用于数据分析和 ML 服务 |
   </example>
 
-## Architectural Diagrams
+## 架构图
 
-{ Mermaid Diagrams to describe key flows interactions or architecture to be followed during implementation, infra provisioning, and deployments }
+{ 使用 Mermaid 图表描述在实施、基础设施配置和部署期间需要遵循的关键流程交互或架构 }
 
-## Data Models, API Specs, Schemas, etc...
+## 数据模型、API 规范、模式等...
 
-{ As needed - may not be exhaustive - but key ideas that need to be retained and followed into the architecture and stories }
+{ 根据需要 - 可能不完整 - 但需要保留并遵循到架构和故事中的关键概念 }
 
 <example>
-### Sensor Reading Schema
+### 传感器读数模式
 
 ```json
 {
@@ -50,27 +50,27 @@ Table listing choices for languages, libraries, infra, etc...
 
 </example>
 
-## Project Structure
+## 项目结构
 
-{ Diagram the folder and file organization structure along with descriptions }
+{ 绘制文件夹和文件组织结构图以及描述 }
 
 ```
 ├ /src
 ├── /services
-│   ├── /gateway        # Sensor data ingestion
-│   ├── /processor      # Data processing and validation
-│   ├── /analytics      # Data analysis and ML
-│   └── /notifier       # Alert and notification system
+│   ├── /gateway        # 传感器数据摄取
+│   ├── /processor      # 数据处理和验证
+│   ├── /analytics      # 数据分析和 ML
+│   └── /notifier       # 警报和通知系统
 ├── /deploy
-│   ├── /kubernetes     # K8s manifests
-│   └── /terraform      # Infrastructure as Code
+│   ├── /kubernetes     # K8s 清单
+│   └── /terraform      # 基础设施即代码
 └── /docs
-    ├── /api           # API documentation
-    └── /schemas       # Data schemas
+    ├── /api           # API 文档
+    └── /schemas       # 数据模式
 ```
 
-## Infrastructure
+## 基础设施
 
-## Deployment Plan
+## 部署计划
 
-## Change Log
+## 变更日志

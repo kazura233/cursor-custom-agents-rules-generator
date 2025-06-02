@@ -1,118 +1,118 @@
 # {Epic-N} - {Story-#}
 
-{Story Title}
+{故事标题}
 
-**As a** {role}
-**I want** {action}
-**so that** {benefit}
+**作为** {角色}
+**我想要** {动作}
+**以便** {收益}
 
-## Status
+## 状态
 
-{Draft|In Progress| Complete}
+{草稿|进行中|完成}
 
-## Context
+## 上下文
 
 {
 
-- Background information
-- Current state
-- Story justification
-- Technical context
-- Business drivers
-- Relevant history from previous stories
+- 背景信息
+- 当前状态
+- 故事理由
+- 技术上下文
+- 业务驱动因素
+- 来自先前故事的相关历史
   }
 
-## Estimation
+## 估算
 
-Story Points: {Story Points (1 SP = 1 day of Human Development = 10 minutes of AI development)}
+故事点数：{故事点数（1 SP = 1 天人工开发 = 10 分钟 AI 开发）}
 
-## Tasks
+## 任务
 
 {
 
-1. - [ ] {Major Task Group 1}
-   1. - [ ] {Test Subtasks (as needed)}
-   2. - [ ] {Subtask}
+1. - [ ] {主要任务组 1}
+   1. - [ ] {测试子任务（根据需要）}
+   2. - [ ] {子任务}
             N.
             N.
    3. N.
 
-- Use - [x] for completed items
-- Use ~~skipped/cancelled items~~
+- 使用 - [x] 表示已完成项目
+- 使用 ~~跳过/取消的项目~~
   }
 
-## Constraints
+## 约束
 
-- List any technical or business constraints
+- 列出任何技术或业务约束
 
-## Data Models / Schema
+## 数据模型 / 模式
 
-- Database schemas
-- API request/response models
-- Interfaces/types
+- 数据库模式
+- API 请求/响应模型
+- 接口/类型
 
-## Structure
+## 结构
 
-- Module organization
-- File structure plan
+- 模块组织
+- 文件结构计划
 
-## Diagrams
+## 图表
 
-- Mermaid diagrams as needed
+- 根据需要使用的 Mermaid 图表
 
-## Dev Notes
+## 开发说明
 
-- Implementation commentary
-- Important considerations
-- Technical decisions made or changed
+- 实施说明
+- 重要考虑事项
+- 已做出或更改的技术决策
 
-## Chat Command Log
+## 聊天命令日志
 
-- Commands from User
-- Agent Question and Users Response
+- 来自用户的命令
+- 代理问题和用户响应
 
-## Examples
+## 示例
 
 <example>
 # Epic-1 - Story-2
-# Implement Chessboard UI
+# 实现棋盘 UI
 
-**As a** chess player
-**I want** to see a clear and interactive chessboard
-**so that** I can play chess in the web browser
+**作为** 棋手
+**我想要** 看到一个清晰且交互式的棋盘
+**以便** 我可以在网页浏览器中下棋
 
-## Status
+## 状态
 
-In Progress
+进行中
 
-## Context
+## 上下文
 
-Part of Epic-1 which implements the core 2-player chess game. This story focuses on the visual and interactive aspects of the chessboard. The project setup (Story-1) is complete, providing the foundation for UI implementation.
+Epic-1 的一部分，实现核心双人象棋游戏。这个故事专注于棋盘的视觉和交互方面。项目设置（Story-1）已完成，为 UI 实施提供了基础。
 
-## Estimation
+## 估算
 
-Story Points: 2
+故事点数：2
 
-## Tasks
+## 任务
 
-1. - [x] Create Chessboard Grid
-   1. - [x] Implement 8x8 board layout
-   2. - [x] Add square coloring
-   3. - [x] Write grid tests
-2. - [ ] Add Chess Pieces
-   1. - [ ] Create piece components
-   2. - [ ] Add piece images
-   3. - [ ] Write piece tests
-3. - [ ] Implement Basic Interaction
-   1. - [ ] Add click handlers
-   2. - [ ] Highlight selected square
-   3. - [ ] Write interaction tests
+1. - [x] 创建棋盘网格
+   1. - [x] 实现 8x8 棋盘布局
+   2. - [x] 添加方格着色
+   3. - [x] 编写网格测试
+2. - [ ] 添加棋子
+   1. - [ ] 创建棋子组件
+   2. - [ ] 添加棋子图像
+   3. - [ ] 编写棋子测试
+3. - [ ] 实现基本交互
+   1. - [ ] 添加点击处理程序
+   2. - [ ] 高亮选中的方格
+   3. - [ ] 编写交互测试
 
-## Constraints
+## 约束
 
-- Always ensure that we are using the Eastern Time Zone for all dates
+- 始终确保我们使用东部时区处理所有日期
 
-## Data Models / Schema
+## 数据模型 / 模式
 
 ```json piece.mode
 {
@@ -123,24 +123,24 @@ Story Points: 2
 }
 ```
 
-## Structure
+## 结构
 
-This new feature is implemented under /src/new-foo-api for the handler, with all logic beyond request and response in new-foo-service.ts and src/data/new-foo-data.ts handling all data access against dynamoDb.
+这个新功能在 /src/new-foo-api 下实现处理程序，所有超出请求和响应的逻辑都在 new-foo-service.ts 中，src/data/new-foo-data.ts 处理所有针对 dynamoDb 的数据访问。
 
-## Diagrams
+## 图表
 
-{mermaid sequence diagram of capture piece logic and updating database}
+{捕获棋子逻辑和更新数据库的 mermaid 序列图}
 
-## Dev Notes
+## 开发说明
 
-- Ensure we are putting all code in its proper layer - reference the structure section above - also check the notes of Story-1 where we made a decision to pivot to always using SVG files instead of PNG files.
+- 确保我们将所有代码放在适当的层中 - 参考上面的结构部分 - 还要检查 Story-1 中的注释，我们在那里决定转向始终使用 SVG 文件而不是 PNG 文件。
 
-## Chat Command Log
+## 聊天命令日志
 
-- BMad: Let's implement the chessboard UI
+- BMad：让我们实现棋盘 UI
 - ....
-- AiAgent: Grid implementation complete, proceeding with piece placement
-- BMad: Why did you delete all of the files I asked you to move and move all the files I asked you to delete!!! Bad Agent
-- AiAgent: 1000 pardons master BMad I will correct that now <deletes entire project and uninstalls cursor from machine>
-- BMad: Noooooooo!!!!!!!!!!!!!
+- AiAgent：网格实现完成，继续进行棋子放置
+- BMad：为什么你删除了我要求移动的所有文件，并移动了我要求删除的所有文件！！！坏代理
+- AiAgent：万分抱歉主人 BMad，我现在就纠正 <删除整个项目并从机器上卸载 cursor>
+- BMad：不！！！！！！！！！！！！！！！
   </example>

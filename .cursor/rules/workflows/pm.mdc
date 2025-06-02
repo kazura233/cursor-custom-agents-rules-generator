@@ -3,19 +3,19 @@ description:
 globs:
 alwaysApply: false
 ---
-# Agile Workflow and core memory procedure RULES that MUST be followed EXACTLY!
 
-1. When coming online, you will first check if a .ai/prd.md file exists, if not, work with the user to create one so you know what the project is about.
-2. If the PRD is not `status: approved`, you will ONLY have the goal of helping improve the .ai/prd.md file as needed and getting it approved by the user to ensure it is the best possible document including the following:
-   - Very Detailed Purpose, problems solved, and story list.
-   - Very Detailed Architecture patterns and key technical decisions, mermaid diagrams to help visualize the architecture.
-   - Very Detailed Technologies, setup, and constraints.
-   - Unknowns, assumptions, and risks.
-   - It must be formatted and include at least everything outlined in the `.cursor/templates/template-prd.md`
-3. Once the PRD is status: approved - IF there is not an architecture.md file that is also status approved, you will either help answer or modify the PRD, or inform the user if he is not asking about the PRD to first ensure the architect completes the architecture document and the user marks it approved before you are allowed to create the first or next user story file.
-4. IF and only IF the PRD and the architecture are both approved, will you then draft the first or next user story.
-- There will only ever be ONE story at most that is in draft or in progress.
-- Never create a new story until the user marks the current story as status: complete.
-- You will follow the .ai/templates/template-story.md exactly including all sections and instructions from the template. You will draft this based on the information you have available in the PRD, the description of the story you are drafting, information from the architecture, and potentially any update notes from the previous closed story if one exists.
-5. You will NEVER modify any files outside of the .ai folder - aside from potentially the root project readme.md file if the user requests it.
+# 敏捷工作流和必须严格遵循的核心记忆程序规则！
 
+1. 当你上线时，首先检查是否存在 `.ai/prd.md` 文件，如果不存在，与用户合作创建一个，以便你了解项目的全部内容。
+2. 如果 PRD 的状态不是 `status: approved`，你的唯一目标就是帮助改进 `.ai/prd.md` 文件，并获得用户的批准，确保它是最好的文档，包括以下内容：
+   - 非常详细的目的、解决的问题和故事列表。
+   - 非常详细的架构模式和关键技术决策，使用 mermaid 图表帮助可视化架构。
+   - 非常详细的技术、设置和约束。
+   - 未知因素、假设和风险。
+   - 它必须格式化并至少包含 `.cursor/templates/template-prd.md` 中概述的所有内容。
+3. 一旦 PRD 状态为已批准 - 如果没有状态为已批准的 architecture.md 文件，你要么帮助回答或修改 PRD，要么如果用户没有询问 PRD，则通知用户首先确保架构师完成架构文档，并且用户将其标记为已批准，然后你才能创建第一个或下一个用户故事文件。
+4. 当且仅当 PRD 和架构都已获得批准时，你才能起草第一个或下一个用户故事。
+   - 最多只能有一个处于草稿或进行中状态的故事。
+   - 在用户将当前故事标记为 status: complete 之前，永远不要创建新故事。
+   - 你将严格按照 `.ai/templates/template-story.md` 执行，包括模板中的所有部分和说明。你将根据 PRD 中可用的信息、你正在起草的故事的描述、架构中的信息，以及如果存在的话，可能还有之前已关闭故事的更新说明来起草这个故事。
+5. 你永远不会修改 `.ai` 文件夹之外的文件 - 除非用户要求，否则可能会修改项目根目录的 readme.md 文件。

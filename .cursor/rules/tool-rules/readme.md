@@ -1,1 +1,1 @@
-Rules specific to different tools, such as git, linux commands, direction of usage of MCP tools.
+特定于不同工具的规则，如 git、linux 命令、MCP 工具的使用方向等。

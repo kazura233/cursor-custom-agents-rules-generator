@@ -1,49 +1,49 @@
-# Changelog
+# 更新日志
 
-## April 2025
+## 2025 年 4 月
 
-### Fixed Clone of All Cursor Indexing Ignores
+### 修复了所有 Cursor 索引忽略的克隆问题
 
-Modified `apply-rules.sh` to properly copy all entries from the source `.cursorindexingignore` file to target projects. Previously, the script was only checking for and adding a single entry (`.cursor/templates/`).
+修改了 `apply-rules.sh` 以正确复制源 `.cursorindexingignore` 文件中的所有条目到目标项目。之前，脚本只检查和添加单个条目（`.cursor/templates/`）。
 
-**Note:** If you have cloned before and used the generator, be sure to manually update your `.cursorindexingignore` to include all entries listed in the template's ignore file.
+**注意：** 如果你之前已经克隆过并使用过生成器，请确保手动更新你的 `.cursorindexingignore` 文件，以包含模板忽略文件中列出的所有条目。
 
-## March 31, 2025
+## 2025 年 3 月 31 日
 
-Big change with this update is the creation of a samples folder with the star trek fictional characters agents, which is more of a fun illustrative (and fun way to work) example.
+本次更新的重大变化是创建了一个包含星际迷航虚构角色代理的示例文件夹，这是一个更有趣的说明性（也是有趣的工作方式）示例。
 
-A more practical serious example is now in place is the modes.json file. Thank you to all feedback from the community - the samples will not be copied over.
+现在有了一个更实用的严肃示例，即 modes.json 文件。感谢社区的所有反馈 - 这些示例不会被复制过去。
 
-## March 30, 2025
+## 2025 年 3 月 30 日
 
-Beginning of changelog - prior changes available in commit / merge history - but this will be maintained going forward.
+更新日志开始 - 之前的更改可在提交/合并历史中查看 - 但今后将在此维护。
 
-Implemented Custom Agents and add a sample of what agents I use as an example with a fun star trek flair. Not intended for actual use, more for illustrative purposes.
+实现了自定义代理，并添加了一个示例，展示了我使用的代理，带有有趣的星际迷航风格。不打算实际使用，更多是为了说明目的。
 
-Introduced instructions and rules to help generate your own Agent modes.json.
+引入了帮助生成你自己的代理 modes.json 的说明和规则。
 
-Vastly improved rule generation to support better change of agent rules working more reliably.
+大幅改进了规则生成，以支持代理规则更可靠地工作。
 
-Breaking bug introduced to apply-rules.bat that will be fixed ASAP.
+apply-rules.bat 中引入了一个破坏性错误，将尽快修复。
 
-A sample agent select rule for typescript was added, and the git rule has also been converted to agent select and all rules are aligned to the much improved upgraded rule generator conventions.
+添加了一个 TypeScript 的示例代理选择规则，git 规则也已转换为代理选择，所有规则都符合大幅改进升级的规则生成器约定。
 
-## Pre March 30, 2025 Important Updates
+## 2025 年 3 月 30 日之前的重要更新
 
-## Massive Upgrade - Please read for the BEST cursor experience to date - this will change everything - March 31, 2025
+## 重大升级 - 请阅读以获得迄今为止最佳的 cursor 体验 - 这将改变一切 - 2025 年 3 月 31 日
 
-### Big fix for Agent AutoSelect Rules
+### 代理自动选择规则的重大修复
 
-Thank you to feedback from the community around this repo and in the cursor forums - an idea sparked about the description field that has been verified to be an amazing boost to agent auto selection of rules, becoming almost nearly not flaky - longer descriptions that really clearly tell it what types of scenarios or context it applies to - this was in the last version of this repo hidden away in more detail in the context that was broken by recent cursor optimization improvements to only consider the description for rule section! The rule-generating-agent has been updated to support this, integrating what was the context into the description field basically, further optimizing it to where the agent would have to be really dumb to not select it in the right scenario, or much easier to correct it!
+感谢社区在这个仓库和 cursor 论坛中的反馈 - 关于描述字段的想法被验证为对代理自动选择规则有惊人的提升，几乎不再不稳定 - 更长的描述真正清晰地告诉它在什么场景或上下文中适用 - 这在仓库的最后一个版本中被隐藏在更详细的上下文中，但被最近的 cursor 优化改进破坏了，只考虑规则部分的描述！规则生成代理已更新以支持这一点，基本上将上下文整合到描述字段中，进一步优化到代理必须非常愚蠢才不会在正确的场景中选择它，或者更容易纠正它！
 
-All example rules in the repo have been updated - and a new agent select typescript rule example has also been added, that I have tested and have confirmed loads reliably.
+仓库中的所有示例规则都已更新 - 还添加了一个新的代理选择 TypeScript 规则示例，我已经测试并确认可以可靠加载。
 
-### Game Changer Custom Agent Generation Tools and Rule - the future of workflows is multi tab custom agents!
+### 改变游戏规则的自定义代理生成工具和规则 - 工作流的未来是多标签自定义代理！
 
-New in the repo - example modes.json file to define your custom agents along with a template and rule to help you create these. The repo no includes in xnotes a custom-agents.md file, an example of what could be used in a prompt to cursor to then use the rule and template to generate the modes.json! While not officially used by cursor - the file will be similar to what they will release soon, but in the meantime can help you create the cursors by giving you the options to enter into the gui to create the custom agents (ensure you enable this current beta feature in the cursor settings). As soon as the version comes out to support it in cursor, this will be updated so that the rule can add to or update the new format once I have the new version that supports in in the coming weeks. But for now this is the best option, and much better than trying to manually type into the gui's tiny window for custom agent instructions. Check out .cursor/modes.json for the custom agents I am using (and still constantly tweaking).
+仓库新增 - 示例 modes.json 文件，用于定义你的自定义代理，以及帮助创建这些的模板和规则。仓库现在在 xnotes 中包含一个 custom-agents.md 文件，这是一个示例，说明可以在提示中使用什么来让 cursor 使用规则和模板生成 modes.json！虽然 cursor 尚未正式使用 - 该文件将与它们很快发布的文件类似，但在此期间可以帮助你创建 cursors，为你提供输入到 GUI 中的选项来创建自定义代理（确保你在 cursor 设置中启用当前测试版功能）。一旦支持它的版本在 cursor 中发布，这将更新，以便规则可以在未来几周内获得支持它的新版本后添加或更新新格式。但目前这是最佳选择，比尝试在 GUI 的小窗口中手动输入自定义代理指令要好得多。查看 .cursor/modes.json 了解我正在使用的自定义代理（并且仍在不断调整）。
 
-In the future I will start to have less rules - for example I am not using the manual workflow anymore as instead I talk to the proper agent in a tab that basically has the workflow built into their instruction set.
+未来我将开始减少规则数量 - 例如，我不再使用手动工作流，而是与在标签页中的适当代理交谈，这些代理基本上将工作流内置到他们的指令集中。
 
-## Important Note V 0.47+
+## 重要说明 V 0.47+
 
-- I have updated the repo to properly add .cursor/rules/\* to the .cursorindexingignore - without this, you will run into a lot of flakiness when trying to edit or tweak an existing rule or change its type without reindexing the whole project. This will make A BIG difference.
+- 我已更新仓库以正确添加 .cursor/rules/\* 到 .cursorindexingignore - 没有这个，当你尝试编辑或调整现有规则或更改其类型而不重新索引整个项目时，你会遇到很多不稳定的情况。这将产生重大影响。

@@ -1,81 +1,88 @@
 ---
-description: This rule is essential for maintaining consistency and quality in rule creation across the codebase. It must be followed whenever: (1) A user requests a new rule to be created, (2) An existing rule needs modification, (3) The user asks to remember certain behaviors or patterns, or (4) Future behavior changes are requested. This rule ensures proper organization, clear documentation, and effective rule application by defining standard formats, naming conventions, and content requirements. It's particularly crucial for maintaining the rule hierarchy, ensuring rules are discoverable by the AI, and preserving the effectiveness of the rule-based system. The rule system is fundamental to project consistency, code quality, and automated assistance effectiveness.
-globs: 
+description: 此规则对于在整个代码库中保持规则创建的一致性和质量至关重要。在以下情况下必须遵循：(1) 用户请求创建新规则时，(2) 需要修改现有规则时，(3) 用户要求记住某些行为或模式时，或 (4) 请求未来行为更改时。此规则通过定义标准格式、命名约定和内容要求，确保适当的组织、清晰的文档和有效的规则应用。这对于维护规则层次结构、确保 AI 可以发现规则以及保持基于规则的系统的有效性尤为重要。规则系统是项目一致性、代码质量和自动化辅助有效性的基础。
+globs:
 alwaysApply: true
 ---
-# Cursor Rules Format
 
-## Template Structure for Rules Files
+# Cursor 规则格式
+
+## 规则文件模板结构
 
 ```mdc
 ---
-description: `Comprehensive description that provides full context and clearly indicates when this rule should be applied. Include key scenarios, impacted areas, and why following this rule is important. While being thorough, remain focused and relevant. The description should be detailed enough that the agent can confidently determine whether to apply the rule in any given situation.`
-globs: .cursor/rules/**/*.mdc OR blank
-alwaysApply: {true or false}
+description: `提供完整上下文的综合描述，明确说明何时应应用此规则。包括关键场景、影响区域以及遵循此规则的重要性。在保持全面的同时，保持重点和相关性。描述应该足够详细，使代理能够自信地确定是否在任何给定情况下应用规则。`
+globs: .cursor/rules/**/*.mdc 或空白
+alwaysApply: {true 或 false}
 ---
 
-# Rule Title
+# 规则标题
 
-## Critical Rules
+## 关键规则
 
-- Concise, bulleted list of actionable rules the agent MUST follow
+- 代理必须遵循的可操作规则的简明列表
 
-## Examples
+## 示例
 
 <example>
-{valid rule application}
+{有效的规则应用}
 </example>
 
 <example type="invalid">
-{invalid rule application}
+{无效的规则应用}
 </example>
 ```
 
-### Organizational Folders (Create if non existent)
-All rules files will be under an organizational folder:
-- .cursor/rules/core-rules - rules related to cursor agent behavior or rule generation specifically
-- .cursor/rules/my-rules - gitignore in a shared repo, rules specifically for ME only
-- .cursor/rules/global-rules - these will be rules that are ALWAYS applied to every chat and cmd/ctrl-k context
-- .cursor/rules/testing-rules - rules about testing
-- .cursor/rules/tool-rules - rules specific to different tools, such as git, linux commands, direction of usage of MCP tools
-- .cursor/rules/ts-rules - typescript language specific rules
-- .cursor/rules/py-rules - python specific rules
-- .cursor/rules/ui-rules - rules about html, css, react
-* create new folders under .cursor/rules/ as needed following similar grouping conventions,
-    - for example `.cursor/rules/cs-rules` if we started using c# in a project
+### 组织文件夹（如果不存在则创建）
 
-## Glob Pattern Examples
-Common glob patterns for different rule types:
-- Core standards: .cursor/rules/*.mdc
-- Language rules: *.cs, *.cpp
-- Testing standards: *.test.ts, *.test.js
-- React components: src/components/**/*.tsx
-- Documentation: docs/**/*.md, *.md
-- Configuration files: *.config.js
-- Build artifacts: dist/**/*
-- Multiple extensions: *.js, *.ts, *.tsx
-- Multiple patterns: dist/**/*.*, docs/**/*.md, *test*.*
+所有规则文件都将位于组织文件夹下：
 
-## Critical Rules
-  - Rule files will be located and named ALWAYS as: `.cursor/rules/{organizational-folder}/rule-name-{auto|agent|manual|always}.mdc`
-  - Rules will NEVER be created anywhere other than .cursor/rules/**
-  - You will always check to see if there is an existing rule to update under all .cursor/rules sub-folders
-  - FrontMatter Rules Types:
-    - The front matter section must always start the file and include all 3 fields, even if the field value will be blank - the types are:
-      - Manual Rule: IF a Manual rule is requested - description and globs MUST be blank and alwaysApply: false and filename ends with -manual.mdc.
-      - Auto Rule: IF a rule is requested that should apply always to certain glob patterns (example all typescript files or all markdown files) - description must be blank, and alwaysApply: false and filename ends with -auto.mdc.
-      - Always Rule: Global Rule applies to every chat and cmd/ctrl-k - description and globs blank, and alwaysApply: true  and filename ends with -always.mdc.
-      - Agent Select Rule: The rule does not need to be loaded into every chat thread, it serves a specific purpose. The description MUST provide comprehensive context about when to apply the rule, including scenarios like code changes, architecture decisions, bug fixes, or new file creation. Globs blank, and alwaysApply:false and filename ends with -agent.mdc
-  - For Rule Content - focus on actionable, clear directives without unnecessary explanation
-  - When a rule will only be used sometimes (alwaysApply: false) the description MUST provide enough context for the AI to confidently determine when to load and apply the rule
-  - Use Concise Markdown Tailored to Agent Context Window usage
-  - Always indent content within XML Example section with 2 spaces
-  - Emojis and Mermaid diagrams are allowed and encouraged if it is not redundant and better explains the rule for the AI comprehension
-  - While there is no strict line limit, be judicious with content length as it impacts performance. Focus on essential information that helps the agent make decisions
-  - Always include a valid and invalid example
-  - NEVER use quotes around glob patterns, NEVER group glob extensions with `{}`
-  - If the request for a rule or a future behavior change includes context of a mistake is made, this would be great to use in the example for the rule
-  - After rule is created or updated, Respond with the following:
-    - AutoRuleGen Success: path/rule-name.mdc
-    - Rule Type: {Rule Type}
-    - Rule Description: {The exact content of the description field}
+- .cursor/rules/core-rules - 与 cursor 代理行为或规则生成相关的规则
+- .cursor/rules/my-rules - 在共享仓库中 gitignore，仅针对我自己的规则
+- .cursor/rules/global-rules - 这些规则将始终应用于每个聊天和 cmd/ctrl-k 上下文
+- .cursor/rules/testing-rules - 关于测试的规则
+- .cursor/rules/tool-rules - 特定于不同工具的规则，如 git、linux 命令、MCP 工具的使用方向
+- .cursor/rules/ts-rules - TypeScript 语言特定规则
+- .cursor/rules/py-rules - Python 特定规则
+- .cursor/rules/ui-rules - 关于 html、css、react 的规则
+
+* 根据需要创建新的文件夹，遵循类似的分组约定，
+  - 例如，如果我们在项目中使用 c#，则创建 `.cursor/rules/cs-rules`
+
+## Glob 模式示例
+
+不同规则类型的常见 glob 模式：
+
+- 核心标准：.cursor/rules/\*.mdc
+- 语言规则：_.cs, _.cpp
+- 测试标准：_.test.ts, _.test.js
+- React 组件：src/components/\*_/_.tsx
+- 文档：docs/\*_/_.md, \*.md
+- 配置文件：\*.config.js
+- 构建产物：dist/\*_/_
+- 多个扩展：_.js, _.ts, \*.tsx
+- 多个模式：dist/**/_._, docs/**/*.md, *test*.*
+
+## 关键规则
+
+- 规则文件将始终位于并命名为：`.cursor/rules/{组织文件夹}/rule-name-{auto|agent|manual|always}.mdc`
+- 规则永远不会在 .cursor/rules/\*\* 之外创建
+- 你将始终检查所有 .cursor/rules 子文件夹下是否有现有规则需要更新
+- FrontMatter 规则类型：
+  - front matter 部分必须始终以文件开头，并包含所有 3 个字段，即使字段值为空 - 类型为：
+    - 手动规则：如果请求手动规则 - description 和 globs 必须为空，alwaysApply: false，文件名以 -manual.mdc 结尾。
+    - 自动规则：如果请求的规则应始终应用于某些 glob 模式（例如所有 typescript 文件或所有 markdown 文件）- description 必须为空，alwaysApply: false，文件名以 -auto.mdc 结尾。
+    - 始终规则：全局规则应用于每个聊天和 cmd/ctrl-k - description 和 globs 为空，alwaysApply: true，文件名以 -always.mdc 结尾。
+    - 代理选择规则：该规则不需要加载到每个聊天线程中，它服务于特定目的。description 必须提供关于何时应用规则的全面上下文，包括代码更改、架构决策、错误修复或新文件创建等场景。Globs 为空，alwaysApply:false，文件名以 -agent.mdc 结尾
+- 对于规则内容 - 专注于可操作的、清晰的指令，无需不必要的解释
+- 当规则仅有时使用（alwaysApply: false）时，description 必须提供足够的上下文，使 AI 能够自信地确定何时加载和应用规则
+- 使用针对代理上下文窗口使用的简洁 Markdown
+- 始终在 XML 示例部分内使用 2 个空格缩进内容
+- 如果表情符号和 Mermaid 图表不是冗余的，并且能更好地解释规则以帮助 AI 理解，则允许并鼓励使用
+- 虽然没有严格的长度限制，但要谨慎处理内容长度，因为它会影响性能。专注于帮助代理做出决策的基本信息
+- 始终包含有效和无效的示例
+- 永远不要在 glob 模式周围使用引号，永远不要用 `{}` 分组 glob 扩展
+- 如果规则请求或未来行为更改包括错误发生的上下文，这将非常适合用于规则的示例
+- 创建或更新规则后，回复以下内容：
+  - AutoRuleGen Success: path/rule-name.mdc
+  - Rule Type: {规则类型}
+  - Rule Description: {description 字段的确切内容}

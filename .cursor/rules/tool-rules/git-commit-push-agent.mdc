@@ -1,46 +1,47 @@
 ---
-description: This rule governs the process of committing and pushing changes to git repositories. It should be applied whenever: (1) The user indicates they want to commit or push changes, (2) The user asks about git commit conventions, (3) The user wants to update or save their work to git, or (4) Any git-related commit and push operations are requested. The rule ensures consistent commit message formatting, proper change documentation, and maintainable git history. It's particularly important for maintaining clear project history, facilitating code reviews, and ensuring proper documentation of changes. This rule helps maintain high-quality commit messages that explain both what changed and why, making it easier for both humans and AI to understand the project's evolution.
-globs: 
+description: 此规则管理向 git 仓库提交和推送更改的过程。在以下情况下应应用此规则：(1) 用户表示想要提交或推送更改时，(2) 用户询问 git 提交规范时，(3) 用户想要更新或保存工作到 git 时，或 (4) 请求任何 git 相关的提交和推送操作时。该规则确保一致的提交消息格式、适当的更改文档和可维护的 git 历史记录。这对于维护清晰的项目历史、促进代码审查和确保更改的正确文档记录尤为重要。此规则有助于维护高质量的提交消息，解释更改的内容和原因，使人类和 AI 都能更容易理解项目的演变。
+globs:
 alwaysApply: false
 ---
-# Git Commit and Push Conventions
 
-## Critical Rules
+# Git 提交和推送规范
 
-- Always run `git add .` from the workspace root to stage changes
-- Review staged changes before committing to ensure no unintended files are included
-- Format commit titles as `type: brief description` where type is one of:
-  - feat: new feature
-  - fix: bug fix
-  - docs: documentation changes
-  - style: formatting, missing semi colons, etc
-  - refactor: code restructuring
-  - test: adding tests
-  - chore: maintenance tasks
-- Keep commit title brief and descriptive (max 72 chars)
-- Add two line breaks after commit title
-- Include a detailed body paragraph explaining:
-  - What changes were made
-  - Why the changes were necessary
-  - Any important implementation details
-- End commit message with " -Agent Generated Commit Message"
-- Push changes to the current remote branch
+## 关键规则
 
-## Examples
+- 始终从工作区根目录运行 `git add .` 来暂存更改
+- 在提交前检查暂存的更改，确保不包含意外文件
+- 将提交标题格式化为 `type: brief description`，其中 type 是以下之一：
+  - feat: 新功能
+  - fix: 错误修复
+  - docs: 文档更改
+  - style: 格式化、缺少分号等
+  - refactor: 代码重构
+  - test: 添加测试
+  - chore: 维护任务
+- 保持提交标题简洁明了（最多 72 个字符）
+- 在提交标题后添加两个换行
+- 包含详细的主体段落，解释：
+  - 进行了哪些更改
+  - 为什么需要进行这些更改
+  - 任何重要的实现细节
+- 以 " -Agent Generated Commit Message" 结束提交消息
+- 将更改推送到当前远程分支
+
+## 示例
 
 <example>
-feat: add user authentication system
+feat: 添加用户认证系统
 
-Implemented JWT-based user authentication system with secure password hashing
-and token refresh functionality. This change provides secure user sessions
-and prevents unauthorized access to protected routes. The implementation
-uses bcrypt for password hashing and includes proper token expiration handling.
+实现了基于 JWT 的用户认证系统，包括安全的密码哈希
+和令牌刷新功能。此更改提供了安全的用户会话
+并防止对受保护路由的未授权访问。实现
+使用 bcrypt 进行密码哈希，并包含适当的令牌过期处理。
 
 -Agent Generated Commit Message
 </example>
 
 <example type="invalid">
-updated stuff
+更新了一些内容
 
-fixed some bugs and added features
-</example> 
+修复了一些错误并添加了功能
+</example>

@@ -16,9 +16,9 @@
 
 ```mermaid
 graph TD
-    E[Epic] --> S[Story]
-    S --> T[Task]
-    T --> ST[Subtask]
+    E[史诗] --> S[故事]
+    S --> T[任务]
+    T --> ST[子任务]
 
     style E fill:#f9f,stroke:#333,stroke-width:2px
     style S fill:#dfd,stroke:#333,stroke-width:2px
@@ -82,24 +82,24 @@ graph TD
 
 ```mermaid
 graph LR
-    subgraph PLAN Phase
-        A[Project Idea] --> B[PRD Creation]
-        B --> C[Architecture Design]
-        C --> D[Epic Planning]
-        D --> E[Story Definition]
+    subgraph 规划阶段
+        A[项目构思] --> B[创建PRD]
+        B --> C[架构设计]
+        C --> D[Epic规划]
+        D --> E[故事定义]
     end
 
-    subgraph ACT Phase
-        E --> F[Story Implementation]
-        F --> G[Testing & Validation]
-        G --> H[Story Completion]
+    subgraph 执行阶段
+        E --> F[故事实施]
+        F --> G[测试与验证]
+        G --> H[故事完成]
     end
 
-    subgraph Iteration
-        H --> |Next Story|E
-        H --> |Epic Complete|I[Epic Completion]
-        I --> |Next Epic|D
-        I --> |Project Complete|J[Release]
+    subgraph 迭代
+        H --> |下一个故事|E
+        H --> |Epic完成|I[Epic完成]
+        I --> |下一个Epic|D
+        I --> |项目完成|J[发布]
     end
 
     style A fill:#f9f,stroke:#333,stroke-width:2px

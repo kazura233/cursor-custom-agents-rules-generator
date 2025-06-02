@@ -118,12 +118,12 @@ cd cursor-auto-rules-agile-workflow
 
 ```mermaid
 graph TD
-    subgraph User Actions
+    subgraph 用户操作
         A[用户在代理聊天中<br>请求创建规则] --> B[代理处理规则请求]
         H[用户继续<br>使用新规则开发] --> A
     end
 
-    subgraph Rule Processing
+    subgraph 规则处理
         B --> C[规则生成代理监控<br>规则创建请求]
         C --> D[代理确定规则类型：<br>代理、始终、自动或手动]
         D --> E[代理创建具有<br>适当frontmatter配置的规则]
@@ -131,7 +131,7 @@ graph TD
         F --> G[代理响应<br>规则创建摘要]
     end
 
-    subgraph Continuous Improvement
+    subgraph 持续改进
         G --> H
     end
 
